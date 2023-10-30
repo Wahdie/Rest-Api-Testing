@@ -1,0 +1,4 @@
+/rest/
+/node_modules/
+/dist/
+/.vscode
