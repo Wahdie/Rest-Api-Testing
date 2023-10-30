@@ -1,4 +1,4 @@
-import { ceapp } from "../../src/app";
+import { ceapp as app } from "../../src/app";
 import request from "supertest";
 import express, { Express } from "express";
 import http from "http";
@@ -7,12 +7,13 @@ import { BaseContact, ContactModel } from "../../src/model/contacts";
 const TEST_PORT = 4000; // Port untuk pengujian
 
 let server: any;
-let app: Express;
+// let app: Express;
 
 // Before running tests, start a test server
 beforeAll((done) => {
      // Mengganti port pada aplikasi pengujian
-     app = ceapp;
+     jest.setTimeout(20000);
+     // app = ceapp;
      server = app.listen(TEST_PORT, () => {
           console.log(`Test server is running on port ${TEST_PORT}`);
           done();

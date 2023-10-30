@@ -1,16 +1,16 @@
-import { ceapp } from "../../src/app";
+import { ceapp as app } from "../../src/app";
 import request from "supertest";
 import express, { Express } from "express";
 import http from "http";
 import mongoose from "mongoose";
 
-let app: Express;
+// let app: Express;
 let server: http.Server;
-const TEST_PORT = 3000; // Port untuk pengujian
+const TEST_PORT = 3001; // Port untuk pengujian
 
 beforeAll((done) => {
      // Mengganti port pada aplikasi pengujian
-     app = ceapp;
+     // app = ceapp;
      server = app.listen(TEST_PORT, () => {
           console.log(`Test server is running on port ${TEST_PORT}`);
           done();

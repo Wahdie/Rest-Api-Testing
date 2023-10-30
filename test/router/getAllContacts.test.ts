@@ -1,4 +1,4 @@
-import { ceapp } from "../../src/app";
+import { ceapp as app } from "../../src/app";
 import request from "supertest";
 import express, { Express } from "express";
 import http from "http";
@@ -6,12 +6,14 @@ import mongoose from "mongoose";
 import { ContactModel } from "../../src/model/contacts";
 import HttpException from "../../src/common/http-exception";
 
-let app: Express;
+// let app: Express;
 let server: http.Server;
-const TEST_PORT = 1000; 
+const TEST_PORT = 1000;
 
 beforeAll((done) => {
-     app = ceapp;
+     jest.setTimeout(20000);
+
+     // app = ceapp;
      server = app.listen(TEST_PORT, () => {
           console.log(`Test server is running on port ${TEST_PORT}`);
           done();
@@ -41,7 +43,7 @@ describe("Get Contacts Route", () => {
           const message = "Internal server Error";
           ContactModel.find = jest.fn().mockRejectedValue(new HttpException({ message }));
           const response = await request(app).get("/contacts");
-          expect(response.status).toBe(503)
-          expect(response.body.message).toBe(message)
+          expect(response.status).toBe(503);
+          expect(response.body.message).toBe(message);
      });
 });

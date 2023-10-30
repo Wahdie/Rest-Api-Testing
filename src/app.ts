@@ -19,6 +19,7 @@ mongoose.connection.once("open", () => {
      console.log("Koneksi MongoDB berhasil terbuka");
 });
 
+
 /**
  * App Variable
  */
@@ -45,12 +46,9 @@ app.use(notFoundHandler);
 /**
  * Server Activation
  */
-const server = http.createServer(app);
-const ListenServer = server.listen(PORT, () => {
-     console.log(`listening on http://localhost:${PORT}`);
-});
 
-export { app as ceapp, server };
+
+export { app as ceapp };
 
 
 /**
