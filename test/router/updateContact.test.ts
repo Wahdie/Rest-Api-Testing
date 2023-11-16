@@ -8,18 +8,17 @@ import mongoose from "mongoose";
 let server: http.Server;
 const TEST_PORT = 3001; // Port untuk pengujian
 
-beforeAll((done) => {
+beforeAll(() => {
      // Mengganti port pada aplikasi pengujian
      // app = ceapp;
      server = app.listen(TEST_PORT, () => {
           console.log(`Test server is running on port ${TEST_PORT}`);
-          done();
      });
 });
-afterAll((done) => {
+afterAll(() => {
      // Hentikan server Express dan selesaikan pengujian setelah semua pengujian selesai
      mongoose.disconnect();
-     server.close(done);
+     server.close();
 });
 
 describe("Test the contact update API", () => {

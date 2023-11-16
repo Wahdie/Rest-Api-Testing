@@ -10,13 +10,12 @@ import HttpException from "../../src/common/http-exception";
 let server: http.Server;
 const TEST_PORT = 1000;
 
-beforeAll((done) => {
+beforeAll(() => {
      jest.setTimeout(20000);
 
      // app = ceapp;
      server = app.listen(TEST_PORT, () => {
           console.log(`Test server is running on port ${TEST_PORT}`);
-          done();
      });
 });
 afterAll((done) => {

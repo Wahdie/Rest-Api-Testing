@@ -9,12 +9,11 @@ import mongoose from "mongoose";
 // let app: Express;
 let server: http.Server;
 const TEST_PORT = 3000;
-beforeAll((done) => {
+beforeAll(() => {
      jest.setTimeout(20000);
      // app = ceapp;
      server = app.listen(TEST_PORT, () => {
           console.log(`Test server is running on port ${TEST_PORT}`);
-          done();
      });
 });
 

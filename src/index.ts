@@ -2,10 +2,10 @@ import { ceapp as app } from "./app";
 import http from 'http'
 
 
-import mongoose from "./db/db";
-mongoose.connection.once("open", () => {
-     console.log("Koneksi MongoDB berhasil terbuka");
-});
+// import mongoose from "./db/db";
+// mongoose.connection.once("open", () => {
+//      console.log("Koneksi MongoDB berhasil terbuka");
+// });
 
 
 if (!process.env.PORT) {

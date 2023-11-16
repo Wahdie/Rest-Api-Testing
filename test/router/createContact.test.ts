@@ -10,13 +10,12 @@ let server: any;
 // let app: Express;
 
 // Before running tests, start a test server
-beforeAll((done) => {
+beforeAll(() => {
      // Mengganti port pada aplikasi pengujian
      jest.setTimeout(20000);
      // app = ceapp;
      server = app.listen(TEST_PORT, () => {
           console.log(`Test server is running on port ${TEST_PORT}`);
-          done();
      });
 });
 

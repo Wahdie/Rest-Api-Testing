@@ -10,7 +10,8 @@
   "jest": {
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
-    }
+    },
+    "testMatch": ["**/**/**.test.ts"]
   },
   "author": "Farid Anwar Wahdie",
   "license": "ISC",

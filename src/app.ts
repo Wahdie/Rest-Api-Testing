@@ -5,7 +5,7 @@ import * as dotenv from "dotenv";
 import express from "express"; //untuk
 import cors from "cors"; // untuk
 import helmet from "helmet"; // untuk
-import http from 'http'
+import http from "http";
 
 import { itemsRouter } from "./routing/contacts.routing";
 import { errorHandler } from "./middleware/error/error.middleware";
@@ -18,7 +18,6 @@ import mongoose from "./db/db";
 mongoose.connection.once("open", () => {
      console.log("Koneksi MongoDB berhasil terbuka");
 });
-
 
 /**
  * App Variable
@@ -47,9 +46,7 @@ app.use(notFoundHandler);
  * Server Activation
  */
 
-
 export { app as ceapp };
-
 
 /**
  * Routing (item/items.routing.ts)
